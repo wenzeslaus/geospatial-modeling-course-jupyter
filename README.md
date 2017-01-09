@@ -5,6 +5,12 @@
 Build it to have it locally:
 
 ```
+docker build -t grass-gis-notebook github.com/wenzeslaus/geospatial-modeling-course-jupyter
+```
+
+In case you plan to modify the code, first download it and then build it:
+
+```
 docker build -t grass-gis-notebook .
 ```
 
@@ -47,9 +53,9 @@ docker run --net=host -d -e CONFIGPROXY_AUTH_TOKEN=$TOKEN --name=tmpnb \
 for F in .../geospatial-modeling-course/grass/*.html;
 do
     python .../geospatial-modeling-course/doc2nb.py \
-        --grass ~/dev/grass/gcc_trunk/bin.x86_64-pc-linux-gnu/grass73 \
-        --gisdbase "/home/vpetras/grassdata" \
-        --location "nc_spm_08_grass7" --mapset "mea582"\
+        --grass grass \
+        --gisdbase "/home/jovyan/grassdata" \
+        --location "nc_spm_08_grass7" --mapset "user1"\
         $F `basename -s .html $F`.ipynb;
 done;
 ```
