@@ -61,6 +61,7 @@ RUN apt-get update \
     && apt-get autoremove \
     && apt-get clean
 
+# GRASS GIS needs to be build with Python 2
 RUN ln -s /usr/bin/python2 /bin/python
 
 # install GRASS GIS
