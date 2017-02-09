@@ -1,5 +1,7 @@
 # tmpnb runtime and Jupyter Notebooks for NCSU Geospatial Modeling and Analysis course
 
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/wenzeslaus/geospatial-modeling-course-jupyter)
+
 ## Prepare GRASS GIS image
 
 Build it to have it locally:
