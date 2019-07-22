@@ -51,6 +51,3 @@ COPY notebooks/* ./
 USER root
 RUN chown -R $NB_USER:users .
 USER $NB_USER
-
-# needed again, or enough for the root?
-RUN source activate python2
