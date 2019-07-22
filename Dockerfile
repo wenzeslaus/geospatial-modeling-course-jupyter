@@ -1,7 +1,7 @@
 # Copyright (C) Vaclav Petras.
 # Distributed under the terms of the BSD 2-Clause License.
 
-FROM jupyter/scipy-notebook:df7a34bebed0
+FROM jupyter/scipy-notebook:7a3e968dd212
 
 MAINTAINER Vaclav Petras <wenzeslaus@gmail.com>
 
