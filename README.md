@@ -52,12 +52,24 @@ docker run --net=host -d -e CONFIGPROXY_AUTH_TOKEN=$TOKEN --name=tmpnb \
 ## Generate the notebooks from HTML
 
 ```
-for F in .../geospatial-modeling-course/grass/*.html;
+COURSE_DIR=".../geospatial-modeling-course"
+CONVERT_SCRIPT=".../doc2nb.py"
+for F in $COURSE_DIR/grass/*.html;
 do
-    python .../geospatial-modeling-course/doc2nb.py \
+    python $CONVERT_SCRIPT \
+        --lang bash \
         --grass grass \
         --gisdbase "/home/jovyan/grassdata" \
         --location "nc_spm_08_grass7" --mapset "user1"\
         $F `basename -s .html $F`.ipynb;
+done;
+for F in $COURSE_DIR/grass/*.html;
+do
+    python $CONVERT_SCRIPT \
+        --lang python \
+        --grass grass \
+        --gisdbase "/home/jovyan/grassdata" \
+        --location "nc_spm_08_grass7" --mapset "user1"\
+        $F `basename -s .html $F`_python.ipynb;
 done;
 ```
